@@ -1,0 +1,188 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+:root {
+    --color-primario: #3a6df0;
+    --color-secundario: #1e1e1e;
+    --color-fondo: #ffffff;
+    --color-texto: #000000;
+    --card-bg: #f4f4f4;
+}
+
+body.dark {
+    --color-fondo: #121212;
+    --color-texto: #ffffff;
+    --card-bg: #1e1e1e;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--color-secundario);
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#btnTema {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+
+.texto-hero {
+    max-width: 600px;
+}
+
+.texto-hero h2 {
+    font-size: 34px;
+}
+
+.foto {
+    width: 260px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Botón */
+.boton {
+    background: var(--color-primario);
+    padding: 12px 25px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton:hover {
+    opacity: 0.85;
+}
+
+/* =========================================================
+   SOBRE MÍ
+========================================================= */
+.tarjetas {
+    padding: 60px;
+    text-align: center;
+}
+
+.tarjetas p {
+    line-height: 1.6;
+}
+
+/* =========================================================
+   TARJETAS DE APTITUDES
+========================================================= */
+.contenedor-tarjetas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    color: var(--color-texto);
+    padding: 25px;
+    border-radius: 12px;
+    width: 260px;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+.formulario {
+    padding: 60px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    margin: auto;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--color-secundario);
+    color: white;
+    margin-top: 40px;
+}
+
+/* =========================================================
+   OCULTO
+========================================================= */
+.oculto {
+    display: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 850px) {
+    .hero {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .foto {
+        margin-top: 20px;
+    }
+}

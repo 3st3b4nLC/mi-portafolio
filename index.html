@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Alberth</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">Alberth</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <button id="btnTema">🌙</button>
+    </header>
+
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <section id="inicio" class="hero">
+        <div class="texto-hero">
+            <h2>Hola, soy Alberth</h2>
+            <p>Desarrollador en formación | Creativo | Apasionado por la tecnología</p>
+            <button class="boton" id="btnLeerMas">Leer más</button>
+
+            <p id="extraInfo" class="oculto">
+                Me apasiona el desarrollo web y la creación de soluciones digitales modernas. 
+                Busco crear proyectos funcionales, limpios y con impacto.
+            </p>
+        </div>
+
+        <!-- FOTO (NO ALTERADA) -->
+        <img src="imagenes/foto.jpg" class="foto" alt="Mi foto">
+    </section>
+
+
+
+    <!-- SECCIÓN SOBRE MÍ / TARJETAS -->
+    <section id="sobre-mi" class="tarjetas">
+        <h2>Sobre mí</h2>
+
+        <p style="max-width: 800px; margin: auto; text-align: justify; font-size: 17px;">
+            Me apasiona el desarrollo web y la creación de soluciones digitales modernas. 
+            Busco crear proyectos funcionales, limpios y con impacto.<br><br>
+
+            Cuento con una alta capacidad de aprendizaje, pensamiento crítico y compromiso 
+            con la mejora continua.<br><br>
+
+            Tengo conocimientos en <strong>HTML, CSS y JavaScript</strong>, centrados en 
+            construir interfaces claras, responsivas y fáciles de usar. Me motiva resolver 
+            problemas mediante código y transformar ideas en productos digitales reales.<br><br>
+
+            Destaco por mi actitud proactiva, la responsabilidad y mi capacidad para trabajar 
+            tanto de manera autónoma como en equipo. Valoro la comunicación efectiva, la 
+            organización y la constancia al afrontar nuevos retos.<br><br>
+
+            Mi objetivo profesional es seguir creciendo en el ámbito del desarrollo web, 
+            participar en proyectos que aporten valor real y fortalecer mis competencias 
+            como futuro profesional IT.
+        </p>
+
+        <br><br>
+
+        <h2>Mis Aptitudes</h2>
+
+        <div class="contenedor-tarjetas">
+            <div class="card">
+                <h3>Desarrollo Web</h3>
+                <p>HTML, CSS y JavaScript aplicados en proyectos reales.</p>
+            </div>
+
+            <div class="card">
+                <h3>Trabajo en Equipo</h3>
+                <p>Buena comunicación, responsabilidad y proactividad.</p>
+            </div>
+
+            <div class="card">
+                <h3>Aprendizaje Rápido</h3>
+                <p>Capacidad para adaptarme y aprender nuevas tecnologías.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FORMULARIO -->
+    <section id="contacto" class="formulario">
+        <h2>Contáctame</h2>
+
+        <form id="formContacto">
+
+            <label>Nombre:</label>
+            <input type="text" id="nombre">
+
+            <label>Email:</label>
+            <input type="email" id="email">
+
+            <label>Mensaje:</label>
+            <textarea id="mensaje"></textarea>
+
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+
+        <p id="resultado"></p>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Alberth • 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
