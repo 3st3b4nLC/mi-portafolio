@@ -1,0 +1,1161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap");
+
+/*base*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 3.5rem 0 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.938rem;
+  background: #000;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #fff;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hacer semitransparente todos los PNG excepto los que tengan .keep-opaque */
+img[src$=".png"]:not(.keep-opaque) {
+  opacity: 0.7;                 /* ajusta (0.0 - 1.0) */
+  transition: opacity .18s ease;
+}
+
+/* Si quieres que al pasar el ratón se vean más nítidos */
+img[src$=".png"]:not(.keep-opaque):hover {
+  opacity: 0.9;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.938rem;
+}
+
+/*reutilisabes*/
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.sectiontitle {
+  font-size: 2.25rem !important;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*header*/
+
+.header {
+  width: 100%;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: background .3s ease, backdrop-filter .3s ease;
+}
+
+.nav {
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navL {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.8rem;        /* Más grande */
+  margin-left: 0;           /* Sin margen negativo */
+}
+
+.navL-img {
+  width: 2.5rem;            /* Más grande */
+}
+
+.navLink,
+.navL,
+.navToggle,
+.navclose {
+  color: #fff;
+}
+
+.navToggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Info background toggle button (right of 'Información') */
+.info-btn {
+  position: absolute;
+  right: 4.5rem; /* a la izquierda del scroll/menu toggle */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3678ff;
+  color: #fff;
+  border: none;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 120;
+}
+
+/* menú móvil */
+@media (max-width: 767px) {
+  .navM {
+    position: fixed;
+    width: 100%;
+    background: #000; /* negro puro */
+    top: -150%;
+    left: 0;
+    padding: 3.5rem 0;
+    transition: 0.4s;
+    z-index: 100;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.navLink {
+  text-transform: uppercase;
+  font-weight: 900;
+  transition: 0.4s;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
+/* Change background header */
+.scroll-header {
+  background: rgba(0,0,0,0.65); /* ajusta opacidad (0.0 - 1.0) */
+  backdrop-filter: blur(4px);   /* opcional: desenfoque detrás */
+}
+
+/* Active link */
+.active-link {
+  position: relative;
+}
+
+.active-link::before {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/*HOME*/
+.homecont {
+  row-gap: 1rem;
+}
+
+.homegroup {
+  display: grid;
+  position: relative;
+  padding-top: 2rem;
+}
+
+/* Centrar el contenido de la columna de texto junto a la imagen (vertical y horizontalmente) */
+.homedata {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.homeimg {
+  height: 250px;
+  width: 100%;
+  justify-self: center;
+}
+
+.hometitle {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 109%;
+  margin-bottom: 1rem;
+}
+
+.homedes {
+  margin-bottom: 1rem;
+}
+
+.homebut {
+  display: flex;
+}
+
+.homebut a {
+  margin-left: 10px;
+}
+
+/* Ocultar visualmente los botones "Servicio" y "Productos" sin alterar el layout */
+.homebut .button {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.swiper-pagination {
+  position: initial;
+  margin-top: 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  opacity: 1;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 0.5rem;
+}
+
+.swiper-pagination-bullet-active {
+  width: 1.5rem;
+  height: 5px;
+  border-radius: 0.5rem;
+}
+
+/*BUTTONS*/
+.button {
+    display: inline-block;
+    background-color: #3678ff;
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: #0557fc;
+}
+
+
+.buttonicon {
+    font-size: 1.25rem;
+}
+
+
+/*CATEGORIA*/
+.categorycontainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+}
+
+.categorydata {
+    text-align: center;
+}
+
+.categoryimg {
+    width: 120px;
+    margin-bottom: .75rem;
+    transition: 3s;
+}
+
+.categorytitle {
+    margin-bottom: .25rem;
+}
+
+
+.categorydata:hover .categoryimg {
+    transform: translateY(-.5rem);
+}
+
+
+/*ABOUT*/
+.aboutcontainer {
+    row-gap: 2rem;
+}
+
+.aboutdata {
+    text-align: center;
+}
+
+.aboutdescription{
+    margin-bottom: 2rem;
+}
+.aboutimg {
+    width: 200px;
+    justify-self: center;
+}
+
+/*PRODUCT*/
+
+.productcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+
+
+}
+.productcontent {
+  /* fondo ligeramente transparente */
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background .25s ease, transform .18s ease;
+}
+
+/* Flip effect: moneda
+   - By default the back is empty. To show a single image on the back for all cards,
+     set the `--flip-back-image` CSS variable below or enable the `.back-image` class on a card.
+*/
+.productcontent {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  perspective: 1000px;
+}
+
+.productcontent * {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: opacity .18s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Back pseudo-element (empty by default). Use the CSS variable --flip-back-image to set an image globally,
+   or add the class .back-image to a specific card to show the image on that card only. */
+.productcontent::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: .75rem;
+  /* No background image: keep empty/transparent so only text (::before) appears */
+  background: transparent;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+}
+
+/* Back text support: use the attribute data-back-text on the card to show text on the back */
+.productcontent[data-back-text]::before {
+  content: attr(data-back-text);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #fff;
+  background: rgba(0,0,0,0.85);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+  z-index: 3;
+  white-space: pre-wrap;
+}
+
+.productcontent.flipped::before {
+  opacity: 1;
+}
+
+/* Helper class to enable back image per card */
+.productcontent.back-image::after {
+  /* Back-image disabled: keep transparent so no image is shown */
+  background: transparent;
+}
+
+/* Global enable: uncomment or set this rule to make all cards show the same back image */
+/*
+:root { --flip-back-image: url('../img/flip.png'); }
+.productcontent::after { background: var(--flip-back-image) center/cover no-repeat; }
+*/
+
+/* When flipped hide front content and reveal the back pseudo-element */
+.productcontent.flipped > * {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.productcontent.flipped::after {
+  opacity: 1;
+}
+
+.productcontent { cursor: pointer; }
+
+/* Ensure the card bounds clip the back image and preserve rounding */
+.productcontent { overflow: hidden; border-radius: .75rem; }
+
+.productcontent:hover {
+  background: rgba(0, 0, 0, 0.72);
+  transform: translateY(-6px);
+}
+
+.productimg {
+    width: 90px;
+    transition: .3s;
+}
+
+.productsubtitle,
+.productprice {
+    display: block;
+}
+
+.productsubtitle {
+    font-size: .75rem;
+    margin-bottom: .5rem;
+}
+
+.producttitle,
+.productprice {
+    color: #fff;
+    font-weight: 500;
+    font-size: .938rem;
+}
+
+/*NEW*/
+.newcontainer {
+    padding-top: 1rem;
+}
+
+.newimg {
+    width: 120px;
+    margin-bottom: .5rem;
+    transition: .3s;
+}
+
+.newcontent {
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background .25s ease, transform .18s ease;
+}
+
+.newcontent:hover {
+  background: rgba(0, 0, 0, 0.72);
+  transform: translateY(-6px);
+}
+
+.newtag {
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    background-color: #3678ff;
+    color: #fff;
+    font-size: .813rem;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+}
+
+/* Hover: make the tag transparent when hovering its card */
+.newcontent:hover .newtag {
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity .18s ease, background-color .18s ease;
+}
+
+.newtitle {
+    font-size: .938rem;
+    font-weight: 500;
+}
+
+.newsubtitle {
+    display: block;
+    font-size: .813rem;
+    margin-bottom: .5rem;
+}
+
+.newprices {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.newprice {
+    font-weight: 500;
+    color: #fff;
+}
+
+.newdiscount {
+    color: #3678ff;
+    font-size: .75rem;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.newbutton {
+    display: inline-flex;
+    padding: .5rem;
+    border-radius: .25rem .25rem .75rem .25rem;
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    background: #3678ff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.newicon {
+    font-size: 1.25rem;
+}
+
+.newcontent:hover .newimg {
+    transform: translateY(-.5rem);
+}
+
+.newbutton:hover {
+    background: #0557fc;
+}
+
+
+/*NOTICIAS*/
+.newsld {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.newslf {
+    background: #111;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: .75rem;
+}
+
+
+.newslin {
+    width: 70%;
+    padding: 0 .5rem;
+    background: none;
+    color: #fff;
+}
+
+.button2 {
+    display: inline-block;
+    background: #0557fc;
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.newslin::placeholder {
+    color: #fff;
+}
+
+/*FOOTER*/
+
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footercontainer {
+    row-gap: 2rem;
+}
+
+.footerL {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.footerL-img {
+    width: 20px;
+}
+
+.footerdescription {
+    margin-bottom: 2.5rem;
+}
+
+.footersocial {
+    display: flex;
+    column-gap: .75rem;
+}
+
+.footersocial-link {
+    display: inline-flex;
+    background: #111;
+    padding: .25rem;
+    border-radius: .25rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.footersocial-link:hover {
+    background: #0557fc;
+}
+
+.footertitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footerlinks {
+    display: grid;
+    row-gap: .35rem;
+}
+
+.footerlink {
+    font-size: .813rem;
+    color: #fff;
+    transition: .3s;
+}
+
+.footerlink:hover {
+    color: #fff;
+}
+
+.footercopy {
+    display: block;
+    text-align: center;
+    font-size: .75rem;
+    margin-top: 4.5rem;
+}
+
+/*scroll up */
+.scrollup{
+  position: fixed;
+  background: #111;
+  right: 1rem;
+  bottom: -20%;
+  display: inline-flex;
+  padding: .3rem;
+  border-radius: .25rem;
+  z-index:10;
+  opacity: .8;
+  transition: .4s;
+}
+
+.scrollupicon{
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.scrollup:hover{
+  background: #000C32;
+  opacity: 1;
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+  bottom: 3rem;
+}
+
+/*scroll bar*/
+::-webkit-scrollbar {
+    width: 0.6rem;
+    background: #413e3e;
+}
+::-webkit-scrollbar-thumb {
+    background: #272525;
+    border-radius: .5rem;
+}
+
+/*RESPONSIVE */
+
+
+@media (max-width: 320px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .homeimg {
+        height: 200px;
+    }
+    .homebut {
+        flex-direction: column;
+        width: max-content;
+        row-gap: 1rem;
+    }
+    .categorycontainer, 
+    .productcontainer {
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+    
+}
+
+
+@media (min-width: 576px) {
+    .aboutcontainer {
+        grid-template-columns: .8fr;
+        justify-content: center;
+    }
+
+    .newslc{
+        display: grid;
+        grid-template-columns: .7fr;
+        justify-content: center;
+    }
+    .newsld {
+        padding: 0 3rem;
+    }
+
+}
+
+@media (min-width: 767px) {
+    body {
+        margin: 0;
+    }
+    .section {
+        padding: 7rem 0 2rem;
+    }
+    .nav {
+        height: calc(3.5rem + 1.5rem);
+    }
+    .navclose, 
+    .navToggle {
+        display: none;
+    }
+    .navList {
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+    .navLink {
+        text-transform: initial;
+        font-weight: initial;
+    }
+    .homecont {
+        padding: 8rem 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+    .homeimg {
+        height: 300px;
+    }
+
+    /* Ensure the image stays at the right side and doesn't affect the text column */
+    .homegroup {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .homeimg {
+      width: 420px;
+      height: auto;
+      object-fit: contain;
+      max-width: 45%;
+    }
+    /* Ajustes para la imagen añadida .homeimg-right: agrandar y mover hacia la derecha sin afectar el texto */
+    .homeimg-right {
+      position: absolute;
+      right: -10px; /* desplaza un poco hacia la derecha fuera del container */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 360px; /* tamaño más grande */
+      max-width: 55%;
+      height: auto;
+      object-fit: cover;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .swiper-pagination {
+        margin-top: 2rem;
+    }
+
+    .categorycontainer {
+        grid-template-columns: repeat(3, 200px);
+        justify-content: center;
+    }
+    .aboutcontainer {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .abouttitle,
+    .aboutdata {
+        text-align: initial;
+
+    }
+    .aboutimg {
+        width: 250px;
+    }
+    .productcontainer {
+        grid-template-columns: repeat(3,200px);
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .discountcontainer {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        align-items: center;
+        column-gap: 3rem;
+        padding: 3rem 0;
+        border-radius: 3rem;
+    }
+
+    .discountimg {
+        width: 350px;
+        order: -1;
+    }
+
+    .discountdata {
+        padding-right: 6rem;
+    }
+
+    .newslc {
+        grid-template-columns: .5fr;
+    }
+
+    .footercontainer {
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        column-gap: 1rem;
+    }
+
+    
+}
+
+@media (min-width: 992px) {
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sectiontitle {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .homecont {
+        padding-top: 9rem;
+        gap: 3rem;
+    }
+    .homegroup {
+        padding-top: 0;
+    }
+    .homeimg {
+        height: 400px;
+        transform: translateY(-3rem);
+    }
+    .homeindicator {
+        top: initial;
+        right: initial;
+        bottom: 15%;
+        left: 45%;
+    }
+    .homeindicator::after {
+        top: 0;
+        height: 75px;
+    }
+
+    .homedetails-img {
+        bottom: 0;
+        right: 58%;
+
+    }
+
+    .hometitle {
+        margin-bottom: 1.5rem;
+    }
+    .homedes {
+        margin-bottom: 2.5rem;
+        padding-right: 2rem;
+    }
+    .categorycontainer {
+        column-gap: 8rem;
+    }
+
+    .categoryimg {
+        width: 200px;
+    }
+    .aboutcontainer {
+        column-gap: 7rem;
+    }
+    .aboutimg {
+        width: 350px;
+    }
+    .aboutdescription {
+        padding-right: 2rem;
+    }
+    .productcontainer {
+        gap: 3.5rem;
+    }
+    .productcontent {
+        border-radius: 1.5rem;
+    }
+    .productimg {
+        width: 110px;
+
+    }
+
+    .producttitle {
+        font-size: 1rem;
+    }
+    .discountcontainer {
+        column-gap: 7rem;
+    }
+
+    .newcontent {
+        width: 310px;
+        border-radius: 1rem;
+        padding: 2rem 0;
+    }
+
+    .newimg {
+        width: 150px;
+    }
+    .newimg,
+    .newsubtitle {
+        margin-bottom: 1rem;
+    }
+
+    .newtitle {
+        font-size: 1rem;
+    }
+
+    .footercopy {
+        margin-top: 6rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .homeimg {
+        height: 420px;   
+    }
+
+    .swiper-pagination {
+        margin-top: 2.5rem;
+    }
+
+
+
+}
+
+/* Background video */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  filter: brightness(0.5);
+}
+
+/* Bordes con blanco transparente */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background:
+    linear-gradient(to right, rgba(255,255,255,0.12), rgba(255,255,255,0) 100%) left,
+    linear-gradient(to left, rgba(255,255,255,0.12), rgba(255,255,255,0) 100%) right,
+    linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0) 100%) top,
+    linear-gradient(to top, rgba(255,255,255,0.12), rgba(255,255,255,0) 100%) bottom;
+  background-repeat: no-repeat;
+  background-size: 12px 100%, 12px 100%, 100% 12px, 100% 12px;
+}
+
+/* Desactivar video en móviles */
+@media (max-width: 767px) {
+  .bg-video { display: none; }
+}
+
+/* corazones interactivos: color por defecto y estado "liked" (sin cambiar forma ni transparencia) */
+.productbutton .bx.bxs-heart,
+.newbutton .bx.bxs-heart {
+  color: #000;  /* negro */
+  transition: color .18s ease, transform .12s ease;
+  will-change: color, transform;
+}
+
+/* al estar pulsado / liked */
+.productbutton.liked .bx.bxs-heart,
+.newbutton.liked .bx.bxs-heart {
+  color: #ffffff;  /* blanco al interactuar */
+  transform: scale(1.08);
+}
+
+/* accesibilidad: estado visual leve (opcional) */
+.productbutton[aria-pressed="true"],
+.newbutton[aria-pressed="true"] {
+  outline: 2px solid rgba(255,255,255,0.06);
+  outline-offset: 4px;
+}
+
+/* Posicionar botones de corazón en esquina inferior derecha */
+.productbutton,
+.newbutton {
+  position: absolute;
+  bottom: 1rem;      
+  right: 1rem;       
+  display: inline-flex;
+  padding: .5rem;
+  border-radius: .25rem .25rem .75rem .25rem;
+  background: #0a3d82;
+  cursor: pointer;
+  transition: .3s;
+  z-index: 10;
+}
+
+.productbutton:hover,
+.newbutton:hover {
+  background: #062857;
+  transform: scale(1.1);
+}
+
+/* Efecto flip tipo "moneda" para .productcontent */
+.productcontent {
+  position: relative;
+  perspective: 1000px; /* necesaria para 3D */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.productcontent .flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .9s cubic-bezier(.2,.9,.2,1);
+}
+
+.productcontent .flip-front,
+.productcontent .flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Conserva el aspecto original en el frente */
+.productcontent .flip-front { z-index: 2; }
+
+/* Reverso: mostrar imagen centrada y etiqueta */
+.productcontent .flip-back {
+  transform: rotateY(180deg);
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08); /* blanco suavizado */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: inherit;
+}
+
+.productcontent .flip-back img {
+  max-width: 72%;
+  border-radius: .5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+.productcontent .flip-back .back-label {
+  margin-top: .5rem;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Estado volteado final */
+.productcontent.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Animación tipo "moneda" al presionar */
+.productcontent .flip-inner.coin-spin {
+  animation: coin-spin .8s ease-in-out;
+}
+
+@keyframes coin-spin {
+  0%   { transform: rotateY(0) scale(1); }
+  40%  { transform: rotateY(540deg) scale(1.06); } /* vueltas rápidas */
+  100% { transform: rotateY(1080deg) scale(1); }
+}
+
+/* Evitar que elementos internos activen flip (si es necesario) */
+.productcontent .no-flip {
+  pointer-events: auto;
+}
+
+/* Asegura que el contenedor sea relative */
+.productcontent,
+.newcontent {
+  position: relative;
+  overflow: hidden;        /* oculta el texto que sobrepasa */
+  border-radius: 1rem;     /* esquinas redondeadas */
+  padding: 1.5rem 1rem;    /* espaciado interno */
+}

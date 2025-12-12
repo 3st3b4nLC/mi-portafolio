@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/HL2.PNG" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Alberth Frederich</title>
+  </head>
+  <body>
+    <!-- Background video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+    </video>
+
+    <!--Header-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="" class="navL">
+        </a>
+
+        <div class="navM" id="nav-menu">
+          <ul class="navList">
+            <li class="navItem">
+              <a href="#home" class="navLink active-link">Inicio</a>
+            </li>
+            <li class="navItem">
+            </li>
+            <li class="navItem">
+              <a href="#correo" class="navLink">Contacto</a>
+            </li>
+          </ul>
+
+          <div class="navclose" id="nav-close">
+            <i class="bx bx-x"></i>
+          </div>
+        </div>
+        <div class="navToggle" id="nav-toggle">
+          <i class="bx bx-grid-alt"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!--HOME-->
+      <section class="home container" id="home">
+        <div class="swiper home-swiper">
+          <div class="swiper-wrapper">
+            <section>
+              <div class="homecont grid">
+                <div class="homedata">
+                  <h1 class="hometitle">Perfil <br />Profesional <br />Computación e Informática</h1>
+                  <p class="homedes">
+                    Estudiante/egresado de la carrera de Computación e Informática 
+                    con competencias en programación, gestión de bases de datos
+                    soporte técnico y administración de herramientas tecnológicas. 
+                  </p>
+                  <p>
+                    Poseo capacidad para analizar, diseñar y proponer soluciones informáticas orientadas a la mejora de procesos institucionales. 
+                    Mantengo un compromiso con la eficiencia, la responsabilidad y el trabajo colaborativo, buscando contribuir al fortalecimiento tecnológico de la organización.
+                  </p>
+                </div>
+                <img src="img/Sence.png" alt="Decoración" class="homeimg-right" />
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!--CATEGORY-->
+      <section class="section category">
+        <h2 class="sectiontitle">
+         
+      <!--CORREO-->
+      <section class="correo-contacto" id="correo"></section>
+      <section class="section newsletter">
+        <div class="newslc container">
+          <h2 class="sectiontitle">Estoy dispuesto a atender sus consultas con mucho gusto</h2>
+          <p class="newsld">Indique su correo Por favor</p>
+          <form action="#" class="newslf" id="subscribe-form">
+            <input type="email" id="newsemail" placeholder="" class="newslin" required />
+            <button type="button" id="subscribeBtn" class="button2">Contácteme</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footer section">
+      <div class="footercontainer container grid">
+        <div class="footercontent">
+          <a href="#" class="footerL">
+            <img src="img/HL2.PNG" alt="" class="footerL-img" />
+          </a>
+
+          <p class="footerdescription">
+          Gracias por ver. <br />
+          </p>
+
+          <div class="footersocial">
+            <a href="mailto:70635336@iestpasm.edu.pe" class="footersocial-link" aria-label="Email">
+              <i class="bx bx-envelope"></i>
+            </a>           
+          </div>
+        </div>
+
+        <div class="footercontent">
+          <h3 class="footertitle">Servicios</h3>
+          <ul class="footerlinks">
+            <li>
+              <a href="mailto:70635336@iestpasm.edu.pe" class="footerlink">70635336@iestpasm.edu.pe</a>
+            </li>
+            <li>
+              <a href="tel:+51989531824" class="footerlink">960 394 395</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollupicon"></i>
+    </a>
+
+    <!--JAVASCRIPT-->
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      (function(){
+        const header = document.getElementById('header');
+        if (!header) return;
+        const threshold = 50; // píxeles para activar
+        function onScroll(){
+          if (window.scrollY > threshold) header.classList.add('scroll-header');
+          else header.classList.remove('scroll-header');
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+      })();
+    </script>
+  </body>
+</html>
+
+<style>
+/* Centrar el contenido de la columna de texto junto a la imagen (vertical y horizontalmente) */
+.homedata {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+</style>
